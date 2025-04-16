@@ -1,0 +1,251 @@
+:root {
+    /* Cores base */
+    --bg-color: #f0f4f8;
+    --text-color: #2d3748;
+    --primary-color: #3182ce;
+    --navbar-bg: #2c5282;
+    --navbar-text: #ffffff;
+    --hover-color: #2c5282; 
+    
+    /* Cores para diferentes temperaturas */
+    --cold-bg: #ebf4ff;
+    --cold-primary: #3182ce;
+    --cool-bg: #e6fffa;
+    --cool-primary: #38b2ac;
+    --warm-bg: #fffaf0;
+    --warm-primary: #dd6b20;
+    --hot-bg: #fff5f5;
+    --hot-primary: #e53e3e;
+    --dark-bg-color: #1a202c;
+    --dark-text-color: #e2e8f0;
+    --dark-navbar-bg: #2d3748;
+    --dark-card-bg: #2d3748;
+    --dark-input-bg: #4a5568;
+    --dark-input-text: #e2e8f0;
+    --dark-hover-color: #4a5568;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: 'Inter', sans-serif;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+.navbar {
+    background-color: var(--navbar-bg);
+    color: var(--navbar-text);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: opacity 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.nav-links a:hover {
+    opacity: 0.8;
+}
+
+.app-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 20px;
+}
+
+.card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+    padding: 2rem;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+.cityInput {
+    flex: 1;
+    padding: 12px 15px;
+    border: 2px solid #e2e8f0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.cityInput:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+button {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 12px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+button:hover {
+    background-color: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.weather-display {
+    margin-top: 2rem;
+    text-align: center;
+    display: none;
+}
+
+.cityDisplay {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+    color: var(--primary-color);
+}
+
+.tempDisplay {
+    font-size: 3rem;
+    font-weight: 700;
+    margin: 1rem 0;
+}
+
+.weatherEmoji {
+    font-size: 3rem;
+    margin: 1rem 0;
+}
+
+.descDisplay {
+    font-size: 1.2rem;
+    text-transform: capitalize;
+    margin-bottom: 0.5rem;
+}
+
+.humidityDisplay {
+    font-size: 1.1rem;
+    color: #4a5568;
+}
+
+.errorDisplay {
+    color: #e53e3e;
+    background-color: #fff5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    margin: 1rem 0;
+    text-align: center;
+}
+
+/* Classes de tema dinâmico */
+.cold-theme {
+    --bg-color: var(--cold-bg);
+    --primary-color: var(--cold-primary);
+}
+
+.cool-theme {
+    --bg-color: var(--cool-bg);
+    --primary-color: var(--cool-primary);
+}
+
+.warm-theme {
+    --bg-color: var(--warm-bg);
+    --primary-color: var(--warm-primary);
+}
+
+.hot-theme {
+    --bg-color: var(--hot-bg);
+    --primary-color: var(--hot-primary);
+}
+.cold-theme button {
+    --hover-color: #2b6cb0;
+}
+.cool-theme button {
+    --hover-color: #2c7a7b;
+}
+
+.warm-theme button {
+    --hover-color: #c05621;
+}
+
+.hot-theme button {
+    --hover-color: #c53030;
+}
+.dark-mode {
+    --bg-color: var(--dark-bg-color);
+    --text-color: var(--dark-text-color);
+    --navbar-bg: var(--dark-navbar-bg);
+    --hover-color: var(--dark-hover-color);
+}
+
+.dark-mode .card {
+    background-color: var(--dark-card-bg);
+}
+
+.dark-mode .cityInput {
+    background-color: var(--dark-input-bg);
+    color: var(--dark-input-text);
+    border-color: #4a5568;
+}
+
+.dark-mode .humidityDisplay {
+    color: #cbd5e0;
+}
+
+.dark-mode-toggle {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    margin: 0;
+    font-family: inherit;
+}
+
+.dark-mode-toggle:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
